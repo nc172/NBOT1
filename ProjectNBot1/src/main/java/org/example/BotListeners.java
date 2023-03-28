@@ -16,6 +16,7 @@ public class BotListeners extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         //get author name
         String authorName = event.getAuthor().getName();
+        Long authorID = event.getAuthor().getIdLong();
         if (event.getAuthor().isBot()) {
             // Ignore messages from other bots
             return;
@@ -25,11 +26,20 @@ public class BotListeners extends ListenerAdapter {
         String messageContent = event.getMessage().getContentRaw();
 
         // Check if the message starts with a specific prefix
-        if (messageContent.startsWith("hi")) {
-            System.out.println("wow");
+        if(authorID == 325261632408256512L){
+            if (messageContent.startsWith("Hi")) {
+                System.out.println("msg from boss:" + messageContent);
+                // Send a response message to the same channel
+                event.getChannel().sendMessage("Hello, boss!").queue();
+            }
+        }else{
+            if (messageContent.startsWith("hi")) {
+            System.out.println("msg from user");
             // Send a response message to the same channel
             event.getChannel().sendMessage("Hello, " + authorName + "!").queue();
         }
+        }
+        
     }
 
 
