@@ -27,7 +27,7 @@ public class BotListeners extends ListenerAdapter {
 
         // Check if the message starts with a specific prefix
         if(authorID == 325261632408256512L){
-            if (messageContent.startsWith("Hi")) {
+            if (messageContent.startsWith("hi")) {
                 System.out.println("msg from boss:" + messageContent);
                 // Send a response message to the same channel
                 event.getChannel().sendMessage("Hello, boss!").queue();
