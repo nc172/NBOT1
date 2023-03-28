@@ -34,10 +34,10 @@ public class BotListeners extends ListenerAdapter {
             }
         }else{
             if (messageContent.startsWith("hi")) {
-            System.out.println("msg from user");
-            // Send a response message to the same channel
-            event.getChannel().sendMessage("Hello, " + authorName + "!").queue();
-        }
+                System.out.println("msg from user");
+                // Send a response message to the same channel
+                event.getChannel().sendMessage("Hello, " + authorName + "!").queue();
+            }
         }
         
     }
