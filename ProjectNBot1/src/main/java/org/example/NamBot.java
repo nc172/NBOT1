@@ -28,7 +28,6 @@ public class NamBot{
         namBot.updateCommands().addCommands(
                 Commands.slash("test", "testing the test command"),
                 Commands.slash("kick", "kicking a user"),
-                Commands.slash("test2","test"),
                 Commands.slash("cal","choose your cal (*,/,+,-)")
                         .addOption(OptionType.STRING,"operation","choose operation",true)
                         .addOption(OptionType.INTEGER,"num1","enter num 1",true)
