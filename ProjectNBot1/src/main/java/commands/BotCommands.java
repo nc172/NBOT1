@@ -54,8 +54,6 @@ public class BotCommands extends ListenerAdapter {
                 int random = (ranNum.nextInt(y.getAsInt()) + x.getAsInt());
                 event.reply("A random number from " + x.getAsInt() + " to " + y.getAsInt() + " is: " + random).queue();
                 break;
-            case"test2":
-                event.reply("this is test 2").queue();
         }
 
     }
