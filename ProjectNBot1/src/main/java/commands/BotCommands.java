@@ -37,10 +37,11 @@ public class BotCommands extends ListenerAdapter {
                         result = num1.getAsInt() * num2.getAsInt();
                         break;
                     case "/":
-                        if (num2.getAsInt() == 0){
+                        try {
+                            result = num1.getAsInt() / num2.getAsInt();
+                        } catch (ArithmeticException e) {
                             event.reply("can't divide a number by 0").queue();
-                        }else{
-                            result = num1.getAsInt() + num2.getAsInt();
+                            return; // return after replying
                         }
                         break;
                 }
