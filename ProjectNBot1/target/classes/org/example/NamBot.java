@@ -16,7 +16,7 @@ public class NamBot{
         JDA namBot;
 
         //initialize namBot
-        namBot = JDABuilder.createDefault("MTA4OTk3MjY0NTQ1OTY3NzIyNg.GcrqHN.d93zzy0YSxLHxAc4_a6f3UM0Mcap70JvTOhw1I")
+        namBot = JDABuilder.createDefault("HIDDEN TOKEN")
                 .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
                 .setActivity(Activity.playing("With your mom"))
                 .addEventListeners(new BotListeners(),new BotCommands())
