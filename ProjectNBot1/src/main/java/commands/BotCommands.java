@@ -63,7 +63,7 @@ public class BotCommands extends ListenerAdapter {
                 Random ranNum = new Random();
                 OptionMapping x = event.getOption("x");
                 OptionMapping y = event.getOption("y");
-                int random = (ranNum.nextInt(y.getAsInt(), x.getAsInt()) + 1);
+                int random = ranNum.nextInt(y.getAsInt() - x.getAsInt()) + x.getAsInt();
                 event.reply("A random number from " + x.getAsInt() + " to " + y.getAsInt() + " is: " + random).queue();
                 break;
             case"finance":
