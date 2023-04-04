@@ -55,6 +55,9 @@ public class BotCommands extends ListenerAdapter {
                             return; // return after replying
                         }
                         break;
+                    default:
+                        event.reply("invalid options").queue();
+                        break;
                 }
                 event.reply("The result is: " + result).queue();
                 break;
@@ -71,6 +74,9 @@ public class BotCommands extends ListenerAdapter {
                 OptionMapping purpose = event.getOption("purposes");
                 expense(money.getAsDouble(), purpose.getAsString());
                 event.reply("money added").queue();
+                break;
+            default:
+                event.reply("invalid options").queue();
                 break;
         }
     }
