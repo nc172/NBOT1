@@ -37,7 +37,9 @@ public class NamBot{
                         .addOption(OptionType.INTEGER,"y","to y number",true),
                 Commands.slash("finance","type in money and description")
                         .addOption(OptionType.STRING,"money","amount money spent",true)
-                        .addOption(OptionType.STRING,"purposes", "reason of the money spent", true)
+                        .addOption(OptionType.STRING,"purposes", "reason of the money spent", true),
+                Commands.slash("rpsgame", "play the Rock Paper Scissor game")
+                        .addOption(OptionType.STRING, "playerchoice", "choose rock|paper|scissor",true)
         ).queue();
 
     }
