@@ -55,6 +55,11 @@ public class BotCommands extends ListenerAdapter {
                             return; // return after replying
                         }
                         break;
+                    case"rpsgame":
+                        OptionMapping playerChoice = event.getOption("playerchoice");
+                        String computerChoice = RPSGame.computerChoice();
+                        String playerStatus = RPSGame.playerStatus(computerChoice,playerChoice.getAsString());
+                        event.reply("Computer choose " + computerChoice + "\n" + playerStatus).queue();
                     default:
                         event.reply("invalid options").queue();
                         break;
