@@ -55,11 +55,6 @@ public class BotCommands extends ListenerAdapter {
                             return; // return after replying
                         }
                         break;
-                    case"rpsgame":
-                        OptionMapping playerChoice = event.getOption("playerchoice");
-                        String computerChoice = RPSGame.computerChoice();
-                        String playerStatus = RPSGame.playerStatus(computerChoice,playerChoice.getAsString());
-                        event.reply("Computer choose " + computerChoice + "\n" + playerStatus).queue();
                     default:
                         event.reply("invalid options").queue();
                         break;
@@ -74,12 +69,19 @@ public class BotCommands extends ListenerAdapter {
                 int random = ranNum.nextInt(y.getAsInt() - x.getAsInt()) + x.getAsInt();
                 event.reply("A random number from " + x.getAsInt() + " to " + y.getAsInt() + " is: " + random).queue();
                 break;
+            //write down financial expenses
             case"finance":
                 OptionMapping money = event.getOption("money");
                 OptionMapping purpose = event.getOption("purposes");
                 expense(money.getAsDouble(), purpose.getAsString());
                 event.reply("money added").queue();
                 break;
+            //rpsgame
+            case"rpsgame":
+                    OptionMapping playerChoice = event.getOption("playerchoice");
+                    String computerChoice = RPSGame.computerChoice();
+                    String playerStatus = RPSGame.playerStatus(computerChoice,playerChoice.getAsString());
+                    event.reply("Computer choose " + computerChoice + "\n" + playerStatus).queue();
             default:
                 event.reply("invalid options").queue();
                 break;
