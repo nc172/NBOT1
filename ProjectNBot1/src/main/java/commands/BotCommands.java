@@ -114,7 +114,7 @@ public class BotCommands extends ListenerAdapter {
             FileOutputStream outputStream = new FileOutputStream(excelPath);
             workbook.write(outputStream);
             workbook.close();
-            System.out.println("money added");
+            System.out.println("$"+ money + " for " + purpose +" is added");
         } catch (Exception e) {
             System.out.println("File not found");
         }
