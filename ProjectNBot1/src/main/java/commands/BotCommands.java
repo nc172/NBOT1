@@ -81,6 +81,17 @@ public class BotCommands extends ListenerAdapter {
                 String computerChoice = game.computerChoice();
                 String playerStatus = game.playerStatus(computerChoice,playerChoice.getAsString());
                 event.reply("Computer choose " + computerChoice + "\n" + playerStatus).queue();
+                break;
+            //look up weather
+            case"weather":
+                OptionMapping location = event.getOption("location");
+                double[] curWeather = Weather.getCurentWeather(location.getAsString());
+                if(curWeather == null){
+                    event.reply("Please retry with different name of the city").queue();;
+                }else{
+                    event.reply("current temperature is: " + curWeather[0] + "\n" + "current humidity is: " + curWeather[1]).queue();;
+                }
+                break;
             default:
                 event.reply("invalid options").queue();
                 break;
