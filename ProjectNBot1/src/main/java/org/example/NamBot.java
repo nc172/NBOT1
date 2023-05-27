@@ -39,7 +39,9 @@ public class NamBot{
                         .addOption(OptionType.STRING,"money","amount money spent",true)
                         .addOption(OptionType.STRING,"purposes", "reason of the money spent", true),
                 Commands.slash("rpsgame", "play the Rock Paper Scissor game")
-                        .addOption(OptionType.STRING, "playerchoice", "choose rock|paper|scissor",true)
+                        .addOption(OptionType.STRING, "playerchoice", "choose rock|paper|scissor",true),
+                Commands.slash("weather","get weather from provided location")
+                        .addOption(OptionType.STRING,"location","enter your location",true)
         ).queue();
 
     }
