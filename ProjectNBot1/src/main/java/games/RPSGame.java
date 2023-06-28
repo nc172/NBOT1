@@ -4,17 +4,7 @@ import java.util.Random;
 
 public class RPSGame {
     //variables
-    String choice;
     final static String[] options = {"rock","paper","scissors"};
-
-    //contrustor
-    public RPSGame(String choice) {
-        this.choice = choice;
-    }
-
-    public RPSGame( ) {
-        
-    }
 
     /**purpose: create random choice from computer (rock,paper,scissor)
      * @return computer choice
